@@ -61,8 +61,8 @@ Respective iterators are included with the containers (e.g. `random access` for 
 
 
 
-# Running
-To run the main.cc file using CMake, do this (from repo root):
+# Testing
+This repo uses GoogleTest to unit test.
 
 ```bash
 

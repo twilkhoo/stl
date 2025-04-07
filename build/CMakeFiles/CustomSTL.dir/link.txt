@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/CustomSTL.dir/main.cc.o -o CustomSTL  vector/libvector.a 

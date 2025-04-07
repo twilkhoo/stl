@@ -1,8 +1,9 @@
 #include <iostream>
+#include "vector.h"
 
 namespace tjs {
-  void test() {
-    std::cout << "Hello\n";
+  int vector::test() const {
+    return 42;
   }
 }
 

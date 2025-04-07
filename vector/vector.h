@@ -3,7 +3,10 @@
 
 namespace tjs {
 
-void test();
+  class vector {
+    public:
+    int test() const;
+  };
 
 }
 

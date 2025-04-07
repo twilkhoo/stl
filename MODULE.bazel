@@ -1,0 +1,10 @@
+# MODULE.bazel
+module(
+    name = "customstl",
+    version = "0.1.0",
+    compatibility_level = 1,
+)
+
+# Pull GoogleTest from the Bazel Central Registry
+# (check https://registry.bazel.build/modules/googletest for the newest tag)
+bazel_dep(name = "googletest", version = "1.16.0")
