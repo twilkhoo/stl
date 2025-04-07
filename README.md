@@ -64,11 +64,13 @@ Respective iterators are included with the containers (e.g. `random access` for 
 # Testing
 This repo uses GoogleTest to unit test.
 
+To build and test everything (all tests in `tests` directory), run
 ```bash
-
-cmake -S . -B build
-cmake --build build
-./build/CustomSTL
-
+bazel test //tests/...
 ```
 
+To build and test a specific container, run
+```bash
+bazel test //tests/<some_test_target>
+```
+, e.g. `bazel test //tests/vector_test`
