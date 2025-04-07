@@ -3,7 +3,17 @@
 #include "vector/vector.h"  // your own library
 
 int main() {
-  tjs::vector obj;
-  std::cout << "obj.test() = " << obj.test() << '\n';
+  tjs::vector<int> obj;
+  std::cout << "size: " << obj.size() << ", capacity: " << obj.capacity() << std::endl;
+
+  obj.push_back(3);
+  std::cout << "size: " << obj.size() << ", capacity: " << obj.capacity() << std::endl;
+
+
+  obj.push_back(1);
+  std::cout << "size: " << obj.size() << ", capacity: " << obj.capacity() << std::endl;
+
+  obj.push_back(1);
+  std::cout << "size: " << obj.size() << ", capacity: " << obj.capacity() << std::endl;
 
 }

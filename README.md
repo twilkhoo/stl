@@ -81,3 +81,9 @@ After adding any deps to the root level BUILD file, run
 ```bash
 bazel run //:main
 ```
+
+# Memory checking
+To run with valgrind, run:
+```bash
+bazel run -c dbg --run_under="valgrind --leak-check=full --show-leak-kinds=all" //:main
+```
