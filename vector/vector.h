@@ -6,6 +6,8 @@ namespace tjs {
   class vector {
     public:
     int test() const;
+
+    
   };
 
 }
