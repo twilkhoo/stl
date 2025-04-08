@@ -73,7 +73,7 @@ To build and test a specific container, run
 ```bash
 bazel test //tests/<some_test_target>
 ```
-, e.g. `bazel test //tests/vector_test`
+, e.g. `bazel test //tests:vector_test`
 
 # Playground
 There is a root main.cc file, to be used as a playground.
