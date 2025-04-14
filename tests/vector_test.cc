@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "vector/vector.h"
 
-TEST(VecTest, SizeChecks) {
+TEST(VecTest, PushBackSizeCapacity) {
   tjs::vector<int> vec;
   EXPECT_EQ(vec.size(), 0);
   EXPECT_EQ(vec.capacity(), 1);
@@ -15,3 +15,6 @@ TEST(VecTest, SizeChecks) {
   EXPECT_EQ(vec.size(), 5);
   EXPECT_EQ(vec.capacity(), 8);
 }
+
+
+
