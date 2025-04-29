@@ -15,7 +15,7 @@ class vector {
   // ------------------------------------------------------------------------
   size_t m_size = 0;      // How many elements are in the vector.
   size_t m_capacity = 0;  // Total capacity thus far.
-  T* m_arr = nullptr;           // Underlying array.
+  T* m_arr = nullptr;     // Underlying array.
 
   // ------------------------------------------------------------------------
   // PRIVATE MEMBER FUNCTIONS
@@ -57,6 +57,43 @@ class vector {
   // Output operator overload.
   template <class U>
   friend std::ostream& operator<<(std::ostream& os, const tjs::vector<U>& vec);
+
+  // ------------------------------------------------------------------------
+  // Iterator
+  // ------------------------------------------------------------------------
+  class iterator {
+    T* ptr_;
+
+   public:
+    using iterator_category = std::random_access_iterator_tag;
+    using value_type = T;
+    using difference_type = std::ptrdiff_t;
+    using pointer = T*;
+    using reference = T&;
+
+    iterator(T* p = nullptr);
+    reference operator*() const;
+    pointer operator->() const;
+    iterator& operator++();
+    iterator operator++(int);
+    iterator& operator--();
+    iterator operator--(int);
+    iterator operator+(difference_type n) const;
+    iterator operator-(difference_type n) const;
+    difference_type operator-(const iterator& o) const;
+    iterator& operator+=(difference_type n);
+    iterator& operator-=(difference_type n);
+    reference operator[](difference_type n) const;
+    bool operator==(const iterator& o) const;
+    bool operator!=(const iterator& o) const;
+    bool operator<(const iterator& o) const;
+    bool operator>(const iterator& o) const;
+    bool operator<=(const iterator& o) const;
+    bool operator>=(const iterator& o) const;
+  };
+
+  iterator begin();
+  iterator end();
 };
 
 }  // namespace tjs

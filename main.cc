@@ -32,4 +32,8 @@ int main() {
 
   std::cout << obj3 << std::endl;
 
+  for (auto k : obj4) {
+    std::cout << k << std::endl;
+  }
+
 }

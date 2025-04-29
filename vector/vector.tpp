@@ -33,7 +33,6 @@ void vector<T>::double_capacity() {
   change_capacity(m_capacity << 1);
 }
 
-
 // ------------------------------------------------------------------------
 // Big 5
 // ------------------------------------------------------------------------
@@ -62,7 +61,7 @@ vector<T>::vector(const vector& other)
     : m_size(other.m_size),
       m_capacity(other.m_capacity),
       m_arr(new T[other.m_capacity]) {
-  std::cout << "Copy constructor\n";
+  // std::cout << "Copy constructor\n";
   for (size_t i = 0; i < m_size; i++) {
     m_arr[i] = other.m_arr[i];
   }
@@ -71,7 +70,7 @@ vector<T>::vector(const vector& other)
 template <class T>
 vector<T>::vector(vector&& other)
     : m_size(other.m_size), m_capacity(other.m_capacity), m_arr(other.m_arr) {
-  std::cout << "Move constructor\n";
+  // std::cout << "Move constructor\n";
   other.m_arr = nullptr;
   other.m_size = 0;
   other.m_capacity = 0;
@@ -174,6 +173,125 @@ std::ostream& operator<<(std::ostream& os, const tjs::vector<U>& vec) {
   }
   os << "}";
   return os;
+}
+
+// ------------------------------------------------------------------------
+// Iterator Implementations
+// ------------------------------------------------------------------------
+
+template <class T>
+vector<T>::iterator::iterator(T* p) : ptr_(p) {}
+
+template <class T>
+typename vector<T>::iterator::reference vector<T>::iterator::operator*() const {
+  return *ptr_;
+}
+
+template <class T>
+typename vector<T>::iterator::pointer vector<T>::iterator::operator->() const {
+  return ptr_;
+}
+
+template <class T>
+typename vector<T>::iterator& vector<T>::iterator::operator++() {
+  ++ptr_;
+  return *this;
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::iterator::operator++(int) {
+  iterator tmp(*this);
+  ++ptr_;
+  return tmp;
+}
+
+template <class T>
+typename vector<T>::iterator& vector<T>::iterator::operator--() {
+  --ptr_;
+  return *this;
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::iterator::operator--(int) {
+  iterator tmp(*this);
+  --ptr_;
+  return tmp;
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::iterator::operator+(difference_type n) const {
+  return iterator(ptr_ + n);
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::iterator::operator-(difference_type n) const {
+  return iterator(ptr_ - n);
+}
+
+template <class T>
+typename vector<T>::iterator::difference_type vector<T>::iterator::operator-(
+    const iterator& o) const {
+  return ptr_ - o.ptr_;
+}
+
+template <class T>
+typename vector<T>::iterator& vector<T>::iterator::operator+=(
+    difference_type n) {
+  ptr_ += n;
+  return *this;
+}
+
+template <class T>
+typename vector<T>::iterator& vector<T>::iterator::operator-=(
+    difference_type n) {
+  ptr_ -= n;
+  return *this;
+}
+
+template <class T>
+typename vector<T>::iterator::reference vector<T>::iterator::operator[](
+    difference_type n) const {
+  return *(ptr_ + n);
+}
+
+template <class T>
+bool vector<T>::iterator::operator==(const iterator& o) const {
+  return ptr_ == o.ptr_;
+}
+
+template <class T>
+bool vector<T>::iterator::operator!=(const iterator& o) const {
+  return ptr_ != o.ptr_;
+}
+
+template <class T>
+bool vector<T>::iterator::operator<(const iterator& o) const {
+  return ptr_ < o.ptr_;
+}
+
+template <class T>
+bool vector<T>::iterator::operator>(const iterator& o) const {
+  return ptr_ > o.ptr_;
+}
+
+template <class T>
+bool vector<T>::iterator::operator<=(const iterator& o) const {
+  return ptr_ <= o.ptr_;
+}
+
+template <class T>
+bool vector<T>::iterator::operator>=(const iterator& o) const {
+  return ptr_ >= o.ptr_;
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::begin() {
+  return iterator(m_arr);
+}
+
+template <class T>
+typename vector<T>::iterator vector<T>::end() {
+  return iterator(m_arr + m_size);
 }
 
 }  // namespace tjs
