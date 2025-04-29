@@ -13,9 +13,9 @@ class vector {
   // ------------------------------------------------------------------------
   // MEMBER VARIABLES
   // ------------------------------------------------------------------------
-  size_t m_size;      // How many elements are in the vector.
-  size_t m_capacity;  // Total capacity thus far.
-  T* m_arr;           // Underlying array.
+  size_t m_size = 0;      // How many elements are in the vector.
+  size_t m_capacity = 0;  // Total capacity thus far.
+  T* m_arr = nullptr;           // Underlying array.
 
   // ------------------------------------------------------------------------
   // PRIVATE MEMBER FUNCTIONS
@@ -41,6 +41,10 @@ class vector {
   // Public Member Functions
   // ------------------------------------------------------------------------
   void push_back(const T& elem);
+
+  template <typename... Args>
+  void emplace_back(Args&&... args);
+
   size_t size() const;
   size_t capacity() const;
   bool empty() const;

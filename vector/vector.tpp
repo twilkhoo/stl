@@ -121,6 +121,14 @@ void vector<T>::push_back(const T& elem) {
 }
 
 template <class T>
+template <typename... Args>
+void vector<T>::emplace_back(Args&&... args) {
+  if (m_size == m_capacity) double_capacity();
+
+  m_arr[m_size++] = T(std::forward<Args>(args)...);
+}
+
+template <class T>
 size_t vector<T>::size() const {
   return m_size;
 }
