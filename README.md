@@ -4,6 +4,12 @@ This is a repo containing lots of custom C++ STL implementations.
 
 # Done
 
+## Containers
+
+### Sequence Containers
+
+- `vector`
+
 
 # To-do
 
@@ -11,7 +17,7 @@ This is a repo containing lots of custom C++ STL implementations.
 
 ### Sequence Containers
 
-- `vector`
+- `string`
 - `deque`
 - `list`
 
