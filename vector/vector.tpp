@@ -22,7 +22,7 @@ void vector<T>::change_capacity(size_t n) {
     throw std::runtime_error("Allocation for bigger array failed");
 
   for (size_t i = 0; i < m_size; i++) {
-    new_arr[i] = m_arr[i];
+    new_arr[i] = std::move(m_arr[i]);
   }
   delete[] m_arr;
   m_arr = new_arr;

@@ -30,7 +30,7 @@ class vector {
   // ------------------------------------------------------------------------
   vector();
   explicit vector(size_t req_size);
-  explicit vector(std::initializer_list<T> l);
+  vector(std::initializer_list<T> l);
   vector(const vector& other);
   vector(vector&& other);
   vector& operator=(const vector& other);
