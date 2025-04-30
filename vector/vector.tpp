@@ -2,6 +2,10 @@
 
 namespace tjs {
 
+// ------------------------------------------------------------------------
+// PRIVATE MEMBER FUNCTIONS
+// ------------------------------------------------------------------------
+
 template <class T>
 size_t vector<T>::next_power_of_two(size_t num) {
   if (num == 0) return 1;
