@@ -9,7 +9,17 @@ This is a repo containing lots of custom C++ STL implementations.
 ### Sequence Containers
 
 - `vector`
+- `string`
 
+# Functors
+
+- `plus`
+- `minus`
+- `less`
+- `greater`
+
+## Iterators
+Respective iterators are included with the containers (e.g. `random access` for `vector`, `bidirectional` for `set`, etc.).
 
 # To-do
 
@@ -17,7 +27,6 @@ This is a repo containing lots of custom C++ STL implementations.
 
 ### Sequence Containers
 
-- `string`
 - `deque`
 - `list`
 
@@ -34,12 +43,8 @@ This is a repo containing lots of custom C++ STL implementations.
 - `queue`
 - `priority_queue`
 
-
-## Iterators
-Respective iterators are included with the containers (e.g. `random access` for `vector`, `bidirectional` for `set`, etc.).
-
-
 ## Algorithms
+
 - `copy`
 - `fill`
 - `transform`
@@ -50,21 +55,11 @@ Respective iterators are included with the containers (e.g. `random access` for 
 - `count`
 - `find`
 
-# Functors
-
-- `plus`
-- `minus`
-- `less`
-- `greater`
-
-
 ## Memory
 
 - `unique_ptr`
 - `shared_ptr`
 - `weak_ptr`
-
-
 
 
 # Testing

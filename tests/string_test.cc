@@ -1,4 +1,4 @@
-#include "../string/string.h"
+#include "string/string.h"
 
 #include <gtest/gtest.h>
 

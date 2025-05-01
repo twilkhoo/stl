@@ -15,3 +15,12 @@ cc_test(
         "@googletest//:gtest_main",
     ],
 )
+
+cc_test(
+    name = "functors_test",
+    srcs = ["functors_test.cc"],
+    deps = [
+        "//functors:functors",
+        "@googletest//:gtest_main",
+    ],
+)
