@@ -1,6 +1,7 @@
 # Custom STL
 
 This is a repo containing lots of custom C++ STL implementations.
+Each folder contains the implementation (template header) of an STL member, with a README for more info on what features are included, and what are omitted.
 
 # Done
 
@@ -17,6 +18,10 @@ This is a repo containing lots of custom C++ STL implementations.
 - `minus`
 - `less`
 - `greater`
+
+## Memory
+
+- `unique_ptr`
 
 ## Iterators
 Respective iterators are included with the containers (e.g. `random access` for `vector`, `bidirectional` for `set`, etc.).
@@ -57,7 +62,6 @@ Respective iterators are included with the containers (e.g. `random access` for 
 
 ## Memory
 
-- `unique_ptr`
 - `shared_ptr`
 - `weak_ptr`
 

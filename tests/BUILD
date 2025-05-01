@@ -24,3 +24,12 @@ cc_test(
         "@googletest//:gtest_main",
     ],
 )
+
+cc_test(
+    name = "unique_ptr_test",
+    srcs = ["unique_ptr_test.cc"],
+    deps = [
+        "//unique_ptr:unique_ptr",
+        "@googletest//:gtest_main",
+    ],
+)

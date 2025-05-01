@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef TJS_STRING_H
+#define TJS_STRING_H
 
 #include <algorithm>
 #include <cstddef>
@@ -111,4 +111,4 @@ class string {
 }  // namespace tjs
 
 #include "string.tpp"
-#endif  // STRING_H
+#endif  // TJS_STRING_H
